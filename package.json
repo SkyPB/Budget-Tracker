@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "npx sass --watch scss/main.scss:css/main.css",
-    "build": "sass scss/main.scss css/main.css",
+    "build": "sass scss/main.scss dist/main.css",
     "start": "live-server"
   },
   "keywords": [],
