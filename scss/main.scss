@@ -1,0 +1,172 @@
+// Variables
+$primary-color: #f67de2f2;
+$secondary-color: #f34bad;
+$background-color: #f8f9fa;
+$text-color: #343a40;
+$highlight-color: #ff6b6b;
+$font-family: 'Arial, sans-serif';
+$border-radius: 5px;
+$shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$color1: #110707;
+$color2: #767474;
+
+// Mixin for reusable flexbox centering
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin gradient($color1, $color2) {
+  background: linear-gradient(to left, $color1, $color2);
+}
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  color: $text-color;
+  padding: 32px;
+
+  @include gradient($color1, $color2);
+
+  header {
+    text-align: center;
+    color: white;
+    padding: 16px;
+    border-radius: $border-radius;
+  }
+}
+// Modal stylings
+.show-modal {
+  @include flex-center;
+  background-color: $primary-color;
+  color: white;
+  padding: 16px;
+  border-radius: $border-radius;
+  cursor: pointer;
+}
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+  }
+}
+
+// Classes to get modal to work
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: $background-color;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: $shadow;
+  z-index: 10;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+// Budget container styles
+.budget-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+
+  section {
+    background-color: white;
+    border: 1px solid $secondary-color;
+    border-radius: $border-radius;
+    padding: 1.5rem;
+    box-shadow: $shadow;
+
+    h2 {
+      text-align: center;
+      color: $secondary-color;
+      margin-bottom: 1rem;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      border: 1px solid $secondary-color;
+      border-radius: $border-radius;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        // background-color: darken($primary-color, 10%);
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        // background-color: lighten($secondary-color, 45%);
+        padding: 8px;
+        margin-bottom: 8px;
+        border-radius: $border-radius;
+      }
+    }
+  }
+}
+
+// Overview section specific styles
+.overview {
+  text-align: center;
+
+  p {
+    font-size: 19px;
+
+    span {
+      font-weight: bold;
+      color: $highlight-color;
+    }
+  }
+}
