@@ -139,7 +139,7 @@ body {
       transition: background-color 0.3s;
 
       &:hover {
-        // background-color: darken($primary-color, 10%);
+        background-color: darken($primary-color, 10%);
       }
     }
 
@@ -148,7 +148,7 @@ body {
       padding: 0;
 
       li {
-        // background-color: lighten($secondary-color, 45%);
+        background-color: lighten($secondary-color, 45%);
         padding: 8px;
         margin-bottom: 8px;
         border-radius: $border-radius;
